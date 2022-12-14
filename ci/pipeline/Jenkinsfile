@@ -9,13 +9,13 @@ pipeline {
     stages {
         stage ('Compile') {
             steps {
-              sh label: 'Compilar codigo', script: 'mv calculator/ && gradlew compileJava'
+              sh label: 'Compilar codigo', script: 'cd calculator && gradlew compileJava'
             }        
         }
 
         stage ('Unit Tests') {
             steps {
-              sh label: 'Ejecutar test unitarios', script: 'mv calculator && gradlew test'
+              sh label: 'Ejecutar test unitarios', script: 'cd calculator && gradlew test'
             }
         }
     }
