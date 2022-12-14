@@ -6,13 +6,13 @@ pipeline {
     stages {
         stage ('Compile') {
             steps {
-              sh label: 'Compilar codigo', script: 'cd calculator && gradle test -g gradle-user-home'
+              sh label: 'Compilar codigo', script: 'cd calculator && gradle compileJava -g gradle-user-home'
             }        
         }
 
         stage ('Unit Tests') {
             steps {
-              sh label: 'Ejecutar test unitarios', script: 'cd calculator && gradle test'
+              sh label: 'Ejecutar test unitarios', script: 'cd calculator && gradle test -g gradle-user-home'
             }
         }
     }
