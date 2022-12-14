@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage ('Compile') {
             steps {
-              sh label: 'Compilar codigo', script: 'calculator/gradle compileJava'
+              sh label: 'Compilar codigo', script: './calculator/gradle compileJava'
             }        
         }
 
