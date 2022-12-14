@@ -3,11 +3,6 @@ pipeline {
         docker { image 'gradle:6.6.1-jre14-openj9' }
     }
     
-    options {
-        timestamps()
-        disableConcurrentBuilds()
-    }
-    
     stages {
         stage ('Compile') {
             steps {
